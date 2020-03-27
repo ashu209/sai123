@@ -1,0 +1,99 @@
+
+ <html>
+<head>
+    <style>
+            body{
+                background-color:#f4f4f4;
+            }
+                h1.hc{
+                    font-family: 'arial';
+                    font-size: 45px;
+                    color: #800000;;
+                    position: relative;
+                    top-right:100px;
+                }
+                    div.ex{
+                        width: 750px;
+                        padding: 20px;
+                        border: 5px solid gray;
+                        margin: 0px;
+                    }
+                p.in{
+                    font-family: 'arial';
+                    font-size: 12px;
+                }
+
+        </style>
+<title> SI calculator </title>
+
+ </head>
+ <body>
+     <center> <br/>
+ <h1 class="hc">INTEREST CALCULATOR</h1><br/>
+<div class="ex">
+    <table border="2" width="100%">
+    <tr>
+        <th>SIMPLE INTEREST</th>
+        <th>COMPOUND INTEREST</th>
+    </tr>
+    <tr>
+        <td>
+            Enter the Principle Amount:<input type="text" id="prince"><br/><br/></center>  
+            Enter the Rate of interest:<input type="text" id="rate"><br/><br/> 
+            Total number of Years:<input type="text"  id="yrs"><br/><br/>
+
+
+<center>
+            <button onClick="myFunction1()">CALCULATE</button><br/><br/></center>
+            <p id="SI"></p>
+        </td>
+
+<br/>
+        <td>
+                Enter the Principle Amount:<input type="text" id="prince1"><br/><br/>
+                Enter the Rate of interest:<input type="text" id="rate1"><br/><br/>
+                Total number of Years:<input type="text"  id="yrs1"><br/><br/>
+                Enter Rate of Compound per year:<input type="text" id="cnd"><br/><br/>
+
+
+<center>
+            <button onClick="myFunction2()">CALCULATE</button><br/><br/></center>
+            <p id="CI"></p>
+        </td>
+
+</tr>
+</table>
+</div>
+<script>
+    function myFunction1()
+    {
+
+           var p=document.getElementById("prince").value;
+           var r=document.getElementById("rate").value;
+           var n=document.getElementById("yrs").value;
+           var inr=p*r*n/100;
+           document.getElementById("SI").innerHTML="Simple interest is = " + inr;
+          // var amt=p+inr;
+          // document.getElementById("xyz").innerHTML="Amount is = " + amt;
+
+    }
+    function myFunction2()
+    {
+
+           var p=document.getElementById("prince1").value;
+           var r=document.getElementById("rate1").value;
+           var t=document.getElementById("yrs1").value;
+           var n=document.getElementById("cnd").value;
+
+            var r1=r/100;
+            var nbr=r1/n;
+            var x=(1+nbr);
+            var nt=n*t;
+            var xnt=Math.pow(x,nt);
+            var cmpndint=p*xnt;
+            document.getElementById("CI").innerHTML="Compound interest is = "+cmpndint;
+    }
+
+</script>
+</body>
+</html>
